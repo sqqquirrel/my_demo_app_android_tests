@@ -1,0 +1,6 @@
+appium-python-client
+selenium
+pytest
+pytest-xdist
+allure-pytest
+pytest-rerunfailures
