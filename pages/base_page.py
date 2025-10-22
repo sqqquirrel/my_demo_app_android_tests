@@ -1,7 +1,7 @@
 import allure
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 from appium.webdriver.common.appiumby import AppiumBy
 
 
@@ -17,9 +17,11 @@ class BasePage:
     # ---------- Core Find & Click ----------
 
     @allure.step("Find element: {locator}")
-    def find(self, by, locator):
+    def find(self, by, locator, timeout=None):
         """Wait for element to be visible and return it."""
-        return self.wait.until(EC.presence_of_element_located((by, locator)))
+        return WebDriverWait(self.driver, timeout or self.timeout).until(
+            EC.presence_of_element_located((by, locator))
+        )
 
     def find_all(self, by, locator, timeout=None):
         """Find all elements (no exception if empty)."""
