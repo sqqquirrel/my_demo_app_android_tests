@@ -6,12 +6,7 @@ from pages.components.menu_element import MenuElement
 class CatalogPage(BasePage):
     PAGE_TITLE = "Products"
 
-    PRODUCT_CONTAINER = (
-        AppiumBy.XPATH,
-        "//android.view.ViewGroup[.//android.widget.TextView[@resource-id='com.saucelabs.mydemoapp.android:id/titleTV']]",
-    )
-    PRODUCT_PRICE = (
-        AppiumBy.ID,
+    PRODUCT_PRICE = (AppiumBy.ID,
         "com.saucelabs.mydemoapp.android:id/priceTV",
     )
     PRODUCT_IMAGE = (

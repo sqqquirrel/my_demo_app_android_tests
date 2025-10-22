@@ -23,6 +23,7 @@ class BasePage:
             EC.presence_of_element_located((by, locator))
         )
 
+    @allure.step("Find all elements: {locator}")
     def find_all(self, by, locator, timeout=None):
         """Find all elements (no exception if empty)."""
         try:
@@ -37,11 +38,13 @@ class BasePage:
         element = self.find(by, locator, timeout)
         element.click()
 
+    @allure.step("Get text from element: {locator}")
     def get_text(self, by, locator, timeout=None) -> str:
         """Get visible text of element."""
         element = self.find(by, locator, timeout)
         return element.text.strip()
 
+    @allure.step("Type '{text}' into element: {locator}")
     def send_keys(self, by, locator, text, timeout=None):
         element = self.find(by, locator, timeout)
         element.clear()
