@@ -1,17 +1,17 @@
 # Automated Tests for Sauce Labs My Demo App (Android)
 
-## 📱 Overview
+##  Overview
 This project contains **automated UI tests** for the **Sauce Labs My Demo App (Android)** built with **Python + Appium + Pytest + Allure**.  
 
 The tests cover:
-- ✅ Login / Logout  
-- ✅ Product catalog and product details  
-- ✅ Sorting by price  
-- ✅ Add to cart and verify cart contents  
+-  Login / Logout  
+-  Product catalog and product details  
+-  Sorting by price  
+-  Add to cart and verify cart contents  
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 Install the following tools:
 
@@ -23,7 +23,7 @@ Install the following tools:
 
 ---
 
-## 🧩 Installation
+##  Installation
 
 ```bash
 # Clone the repository
@@ -39,7 +39,7 @@ venv\Scripts\activate       # on Windows
 pip install -r requirements.txt
 ```
 
-## 📦 Application Under Test
+##  Application Under Test
 
 The test app (`mda-2.2.0-25.apk`) is located in the `app/` folder
 
@@ -47,7 +47,7 @@ No need to download anything manually — the tests use this file directly.
 
 ---
 
-## 🚀 Running Tests
+##  Running Tests
 
 Make sure your **Appium server** and **Android emulator (or device)** are running:
 
@@ -64,7 +64,7 @@ Or to run a specific test module:
 ```bash
 pytest tests/test_login.py -v --alluredir=allure-reports
 ```
-## 📊 Allure Report
+##  Allure Report
 
 Generate and open the Allure report:
 ```bash
@@ -72,7 +72,7 @@ allure serve allure-eports
 ```
 
 
-## 🧾 Reporting & Stability
+##  Reporting & Stability
 
 - Each test uses explicit waits (no hard sleeps).
 
@@ -84,7 +84,7 @@ allure serve allure-eports
 
 - Screenshots on failure are attached in Allure reports.
 
-## 🧑‍💻 Notes for Reviewer
+##  Notes for Reviewer
 
 - The APK (app/mydemoapp.apk) is already included — no manual download needed.
 
